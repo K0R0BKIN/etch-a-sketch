@@ -1,0 +1,30 @@
+body {
+    height: 100vh;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    height: 768px;
+    width: 768px;
+
+    box-sizing: content-box;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    border: 2px solid black;
+}
+
+.div {
+    width: 48px;
+    aspect-ratio: 1/1;
+
+    box-sizing: border-box;
+
+    border: 1px solid #ddd;
+    background-color: white;
+}
