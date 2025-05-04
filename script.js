@@ -75,4 +75,4 @@ function handleButtonClick() {
 createGrid();
 
 const btn = document.querySelector("button");
-btn.addEventListener("click", handleButtonClick)
+btn.addEventListener("click", handleButtonClick);
