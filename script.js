@@ -39,14 +39,22 @@ function createCell(gridSize, rowCount) {
 
     cell.classList.add("cell");
     cell.style.width = `${size}px`;
+    cell.style.opacity = `0`;
 
     return cell;
 }
 
 // Event handlers
 
-function handleGridHover({ target: cell }) {
+function handleGridHover(event) {
+    const cell = event.target.closest('.cell');
+    if (!cell) return;
+    
     cell.style.backgroundColor = getRandomColor();
+    const opacity = parseFloat(cell.style.opacity);
+    if (opacity < 1) {
+        cell.style.opacity = (opacity + 0.1).toString();
+    }
 }
 
 function handleButtonClick() {
