@@ -39,28 +39,24 @@ function createCell(gridSize, rowCount) {
 
 // Event handlers
 
-function handleGridHover(e) {
-    if (e.target.classList.contains("cell")) {
-        const cell = e.target;
-        cell.classList.add("painted");
-    }
+function handleGridHover({ target: cell }) {
+    cell.classList.add("painted");
 }
 
 function handleButtonClick() {
     const msg = "How many pixels should each side have?";
-    const rowCount = prompt(msg, 100);
+    const rowCount = prompt(msg, ROW_LIMIT);
 
     if (rowCount > ROW_LIMIT) {
         alert(`You can't have more than ${ROW_LIMIT} rows!`);
         return;
     }
 
-
     const grid = document.querySelector("#grid");
     populateGrid(grid, rowCount);
 }
 
-// Main script
+// Initialize
 
 createGrid();
 
