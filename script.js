@@ -1,6 +1,7 @@
 // Constants
 
 const GRID_SIZE = 768;
+const ROW_LIMIT = 100;
 
 // Grid functions
 
@@ -47,7 +48,13 @@ function handleGridHover(e) {
 
 function handleButtonClick() {
     const msg = "How many pixels should each side have?";
-    const rowCount = prompt(msg, 512);
+    const rowCount = prompt(msg, 100);
+
+    if (rowCount > ROW_LIMIT) {
+        alert(`You can't have more than ${ROW_LIMIT} rows!`);
+        return;
+    }
+
 
     const grid = document.querySelector("#grid");
     populateGrid(grid, rowCount);
