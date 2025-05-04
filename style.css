@@ -12,8 +12,8 @@ body {
 }
 
 #grid {
-    /* height: 768px; */
-    /* aspect-ratio: 1/1; */
+    width: 768px;
+    aspect-ratio: 1/1;
 
     box-sizing: content-box;
 
@@ -24,7 +24,6 @@ body {
 }
 
 .cell {
-    /* width: 48px; */
     aspect-ratio: 1/1;
 
     box-sizing: border-box;

@@ -1,18 +1,12 @@
-// Helper functions
+// Constants
 
-function setSize(element, size) {
-    element.style.width = `${size}px`;
-    element.style.aspectRatio = "1/1";
-}
+const GRID_SIZE = 768;
 
 // Grid functions
 
-function createGrid(size = 768, rowCount = 16) {
+function createGrid(rowCount = 16) {
     const grid = document.querySelector("#grid");
-    
-    setSize(grid, size);
     populateGrid(grid, rowCount);
-
     grid.addEventListener("mouseover", handleGridHover);
 }
 
@@ -21,12 +15,11 @@ function clearGrid(grid) {
 }
 
 function populateGrid(grid, rowCount) {
-    const gridSize = parseInt(grid.style.width);
     const cellCount = rowCount**2;
 
     clearGrid(grid);
     for (let i = 0; i < cellCount; i++) {
-        const cell = createCell(gridSize, rowCount);
+        const cell = createCell(GRID_SIZE, rowCount);
         grid.appendChild(cell);
     }
 }
@@ -38,7 +31,7 @@ function createCell(gridSize, rowCount) {
     const size = gridSize / rowCount;
 
     cell.classList.add("cell");
-    setSize(cell, size);
+    cell.style.width = `${size}px`;
 
     return cell;
 }
