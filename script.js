@@ -3,6 +3,12 @@
 const GRID_SIZE = 768;
 const ROW_LIMIT = 100;
 
+// Helper functions
+
+function getRandomColor() {
+    return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+}
+
 // Grid functions
 
 function createGrid(rowCount = 16) {
@@ -16,7 +22,7 @@ function clearGrid(grid) {
 }
 
 function populateGrid(grid, rowCount) {
-    const cellCount = rowCount**2;
+    const cellCount = rowCount ** 2;
 
     clearGrid(grid);
     for (let i = 0; i < cellCount; i++) {
@@ -40,7 +46,7 @@ function createCell(gridSize, rowCount) {
 // Event handlers
 
 function handleGridHover({ target: cell }) {
-    cell.classList.add("painted");
+    cell.style.backgroundColor = getRandomColor();
 }
 
 function handleButtonClick() {
