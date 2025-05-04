@@ -1,15 +1,19 @@
 body {
+    font-family: 'Inter', sans-serif;
+    
     height: 100vh;
     margin: 0;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    gap: 32px;
     align-items: center;
 }
 
-#container {
-    height: 768px;
-    width: 768px;
+#grid {
+    /* height: 768px; */
+    /* aspect-ratio: 1/1; */
 
     box-sizing: content-box;
 
@@ -19,14 +23,18 @@ body {
     border: 2px solid black;
 }
 
-.div {
-    width: 48px;
+.cell {
+    /* width: 48px; */
     aspect-ratio: 1/1;
 
     box-sizing: border-box;
 
     border: 1px solid #ddd;
     background-color: white;
+}
+
+.painted {
+    background-color: black;
 }
 
 #button {
