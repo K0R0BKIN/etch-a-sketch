@@ -5,8 +5,12 @@ const ROW_LIMIT = 100;
 
 // Helper functions
 
+function getRandomNumber(max) {
+    return Math.floor(Math.random() * (max + 1));
+}
+
 function getRandomColor() {
-    return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+    return `rgb(${getRandomNumber(255)} ${getRandomNumber(255)} ${getRandomNumber(255)})`;
 }
 
 // Grid functions
